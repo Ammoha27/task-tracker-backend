@@ -1,3 +1,5 @@
+
+/*
 package com.example.tasktrackerbackend.security;
 
 import io.jsonwebtoken.*;
@@ -13,29 +15,18 @@ public class JwtUtils {
 
     // Erstellen eines JWT-Tokens
     public String generateJwtToken(String username) {
-        return Jwts.builder()
-                .setSubject(username)
-                .setIssuedAt(new Date())
-                .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
-                .signWith(SignatureAlgorithm.HS512, jwtSecret)
-                .compact();
+        return Jwts.builder().setSubject(username).setIssuedAt(new Date()).setExpiration(new Date((new Date()).getTime() + jwtExpirationMs)).signWith(SignatureAlgorithm.HS512, jwtSecret).compact();
     }
 
     // Extrahieren des Benutzernamens aus dem JWT-Token
     public String getUserNameFromJwtToken(String token) {
-        return Jwts.parser()
-                .setSigningKey(jwtSecret)
-                .parseClaimsJws(token)
-                .getBody()
-                .getSubject();
+        return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().getSubject();
     }
 
     // Überprüfen des JWT-Tokens
     public boolean validateJwtToken(String authToken) {
         try {
-            Jwts.parser()
-                    .setSigningKey(jwtSecret)
-                    .parseClaimsJws(authToken);
+            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
             return true;
         } catch (SignatureException e) {
             System.out.println("Invalid JWT signature: " + e.getMessage());
@@ -51,3 +42,5 @@ public class JwtUtils {
         return false;
     }
 }
+
+ */

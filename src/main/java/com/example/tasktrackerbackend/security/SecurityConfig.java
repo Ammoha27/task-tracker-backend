@@ -1,3 +1,4 @@
+ /*
 package com.example.tasktrackerbackend.security;
 
 import org.springframework.context.annotation.Bean;
@@ -27,3 +28,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(new JwtAuthFilter(jwtUtils), UsernamePasswordAuthenticationFilter.class);
     }
 }
+
+  */
